@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "sentence_distance_dtw"
+version = "0.1.0"
+description = ""
+authors = ["ermk006 <eri.maekawa@mulabo.org>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+gensim = "^4.2.0"
+pandas = "^1.4.2"
+mecab-python3 = "^1.0.5"
+mojimoji = "^0.0.12"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
