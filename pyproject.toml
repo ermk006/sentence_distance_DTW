@@ -10,6 +10,8 @@ gensim = "^4.2.0"
 pandas = "^1.4.2"
 mecab-python3 = "^1.0.5"
 mojimoji = "^0.0.12"
+beautifulsoup4 = "^4.11.1"
+sklearn = "^0.0"
 
 [tool.poetry.dev-dependencies]
 

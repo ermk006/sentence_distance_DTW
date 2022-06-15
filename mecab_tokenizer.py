@@ -29,9 +29,22 @@ for line in sentenses:
   # 全角を半角へ（カタカナ除く）
   line = moji.zen_to_han(line, kana=False)
   # 全角記号を削除
-  line = re.sub("[\uFF01-\uFF0F\uFF1A-\uFF20\uFF3B-\uFF40\uFF5B-\uFF65\u3000-\u303F]", '', line)
+  line = re.sub("[\uFF01-\uFF0F\uFF1A-\uFF20\uFF3B-\uFF40\uFF5B-\uFF65\u3001-\u303F]", '', line)
+
+  #改行、タブ、スペースなどをまとめて削除
+  #text = "a\u3000\n\n b\t\nc\r\nd\x0ce\x0b\rf\r\n"
+  #text = re.sub(r"\s", "", text)
+
+  #改行コード（\r\nや\n）だけをまとめて削除
+  #text = "a\u3000\n\n b\t\nc\r\nd\x0ce\x0b\rf\r\n"
+  #text = re.sub(r"[\r\n]", "", text)
+
+  #いくつかのスペース（例えば全角スペース、半角スペース、タブ）をまとめて削除
+  #text = "a\u3000\n\n b\t\nc\r\nd\x0ce\x0b\rf\r\n"
+  #text = re.sub(r"[\u3000 \t]", "", text)
 
   s = mecab_tokenizer(line)
-  s = ' '.join(s)
+  s = '\n' + ' '.join(s)
+
   with open(out_file, 'a', encoding='UTF-8') as wf:
     wf.write(s)
