@@ -1,3 +1,4 @@
+# コーパスを分かち書きしてword2veec学習用のテキストファイルを作る
 import MeCab
 import mojimoji as moji
 import re

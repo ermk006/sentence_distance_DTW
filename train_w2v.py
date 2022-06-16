@@ -1,3 +1,4 @@
+# コーパスからword2vecモデルを生成する
 from gensim.models import word2vec
 from gensim.models import KeyedVectors
 

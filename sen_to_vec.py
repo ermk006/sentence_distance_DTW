@@ -1,3 +1,4 @@
+# 文章を形態素解析してベクトル列に変換する
 from xml.sax import SAXNotRecognizedException
 import mecab_tokenizer as m
 import mojimoji as moji

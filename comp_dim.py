@@ -1,3 +1,4 @@
+# 学習済みword2vecモデルが100次元ベクトルなので、3次元に次元削減する。
 from operator import index
 from gensim.models import KeyedVectors
 from gensim.models import word2vec
@@ -26,7 +27,6 @@ pca = PCA(n_components=3)
 comp_X = pca.fit_transform(X)
 
 comp_data = pd.DataFrame(comp_X)
-
 '''
 print(y.shape)
 print(y.head(100))
