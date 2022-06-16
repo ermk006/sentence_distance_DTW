@@ -2,8 +2,8 @@ import MeCab
 import mojimoji as moji
 import re
 
-in_file = "data/easy.txt"
-out_file = "data/out_tokenizer.txt"
+in_file = "data/corpus.txt"
+out_file = "out/token.txt"
 tagger = MeCab.Tagger("-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd")
 
 
@@ -46,5 +46,5 @@ for line in sentenses:
   s = mecab_tokenizer(line)
   s = '\n' + ' '.join(s)
 
-  with open(out_file, 'a', encoding='UTF-8') as wf:
+  with open(out_file, 'a+', encoding='UTF-8') as wf:
     wf.write(s)
