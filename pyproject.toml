@@ -12,6 +12,8 @@ mecab-python3 = "^1.0.5"
 mojimoji = "^0.0.12"
 beautifulsoup4 = "^4.11.1"
 sklearn = "^0.0"
+fastdtw = "^0.3.4"
+matplotlib = "^3.5.2"
 
 [tool.poetry.dev-dependencies]
 
