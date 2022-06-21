@@ -23,10 +23,13 @@ df = pd.read_csv(bi_file, encoding='UTF-8', sep=" ", header=None, index_col=None
 X = df.iloc[:, 1:]
 y = df.iloc[:, 0]
 
+
 pca = PCA(n_components=3)
 comp_X = pca.fit_transform(X)
 
 comp_data = pd.DataFrame(comp_X)
+
+print(y.iloc[810:830])
 '''
 print(y.shape)
 print(y.head(100))

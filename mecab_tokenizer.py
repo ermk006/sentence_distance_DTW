@@ -31,6 +31,12 @@ for line in sentenses:
   line = moji.zen_to_han(line, kana=False)
   # 全角記号を削除
   line = re.sub("[\uFF01-\uFF0F\uFF1A-\uFF20\uFF3B-\uFF40\uFF5B-\uFF65\u3001-\u303F]", '', line)
+  # 半角記号を削除
+  line = line.replace('"','')
+  line = re.sub(r'[!"#$%&\'\\\\()*+,-./:;<=>?@[\\]^_`{|}~“”]', r' ', line)
+  # 数字を0に変換, 桁区切りカンマは削除
+  line = re.sub(r'(\d)([,.])(\d+)', r'\1\3', line)
+  line = re.sub(r'\d+', '0', line)
 
   #改行、タブ、スペースなどをまとめて削除
   #text = "a\u3000\n\n b\t\nc\r\nd\x0ce\x0b\rf\r\n"

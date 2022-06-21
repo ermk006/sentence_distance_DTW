@@ -10,6 +10,7 @@ sentence = "今日は暑い日だった。"
 
 # 単語リストをベクトルリストへ変換
 df = pd.read_csv(comp_vector_list, index_col=0, header=None)
+print(df.iloc[:,0])
 
 def to_vector(sentence):
   # 文を形態素解析＋原形に戻して単語リストへ
@@ -18,12 +19,15 @@ def to_vector(sentence):
   word_list = m.mecab_tokenizer(line)
 
   sentence_vec = []
+  sentence_word = []
   for w in word_list:
     try:
       sentence_vec.append(list(df.loc[w]))
+      sentence_word.append(w)
     except:
+      # print("NO WORD IN LIST!! :", w)
       pass
 
-  return(sentence_vec)
+  return(sentence_vec, sentence_word)
 
 

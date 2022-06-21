@@ -3,27 +3,35 @@ import sen_to_vec as vec
 from scipy.spatial.distance import euclidean
 from fastdtw import fastdtw
 
-x = "気象庁と環境省は、東京都と千葉県、茨城県では７日に熱中症になる危険がとても高いと言って、「高温注意情報」を出しました。東京都と周りの８つの県では今年の７月から、高温注意情報の基準が新しくなりました。今までは気温だけで考えていましたが、湿度なども考えて出します。"
-y = "東京都と千葉県、茨城県では7日、熱中症の危険性が極めて高くなると予想されています。気象庁と環境省は高温注意情報を発表し、熱中症に対する一層の対応を求めています。関東甲信ではことし7月から、高温注意情報の発表基準が予想最高気温から暑さ指数に変更されていますが、今回が初めての発表になります。"
+def plot(x, y, word_list=False):
+  vec_x, word_x = vec.to_vector(x)
+  vec_y, word_y = vec.to_vector(y)
 
-vec_before = vec.to_vector(x)
-vec_after = vec.to_vector(y)
-print("input1_len:",len(vec_before))
-print("input2_len:",len(vec_after))
+  print("input1_len:",len(vec_x))
+  print("input2_len:",len(vec_y))
 
-distance, path = fastdtw(vec_before, vec_after, dist=euclidean)
+  if(word_list==True):
+    print("easy:",word_x)
+    print("news:",word_y)
 
-#print(path)
-y1 = [1 for i in range(len(vec_before))]
-y2 = [0 for i in range(len(vec_after))]
+  distance, path = fastdtw(vec_x, vec_y, dist=euclidean)
+  print("distance:" ,distance)
 
+  #print(path)
+  y1 = [1 for i in range(len(vec_x))]
+  y2 = [0 for i in range(len(vec_y))]
 
-import matplotlib.pyplot as plt
-#plot signals
-plt.plot(y1, label = 'Sequence 1')
-plt.plot(y2, label = 'Sequence 2')
-#plot alignment
+  import matplotlib.pyplot as plt
+  #plot signals
+  plt.plot(y1)
+  plt.plot(y2)
+  #plot alignment
 
-for i, j in path:
-    plt.plot((i, j), (y1[i], y2[j]), color = 'black')
-plt.show()
+  for i, j in path:
+      plt.plot((i, j), (y1[i], y2[j]), color = 'black')
+  plt.show()
+
+if __name__=="__main__":
+  easy = "お盆休みなどにお年寄りに会うときに気をつけることを、東北医科薬科大学の賀来満夫先生に聞きました。賀来先生は、ふるさとにお年寄りがいる場合は、帰るかどうかよく考えて決めてほしいと言っています。そして、ふるさとに帰る場合は、手をよく洗ってマスクをしっかりつけるようにします。"
+  news = "お盆休みなどで高齢者と接する機会が増える際の注意点について、感染症の専門家は手洗いやマスクの着用などの基本的な対策に加え、一緒に過ごす時間を短くするなど、ポイントを絞って過ごし方を工夫してほしいとしています。お盆の帰省について感染症対策に詳しい東北医科薬科大学の賀来満夫特任教授は、帰省先に重症化のリスクが高い高齢者がいる場合は、帰省するかどうかは慎重に検討してほしいとしています。そのうえで、帰省した場合については、まずは基本的な感染対策として、こまめな手洗いや会話をする際にお互いに必ずマスクを着用するなどの対策を徹底することが必要だとしました。"
+  plot(easy, news, word_list=True)
