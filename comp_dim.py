@@ -29,7 +29,6 @@ comp_X = pca.fit_transform(X)
 
 comp_data = pd.DataFrame(comp_X)
 
-print(y.iloc[810:830])
 '''
 print(y.shape)
 print(y.head(100))

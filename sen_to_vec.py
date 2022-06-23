@@ -1,5 +1,6 @@
 # 文章を形態素解析してベクトル列に変換する
 import mecab_tokenizer as m
+import ginza_tokenizer as g
 import mojimoji as moji
 import re
 import pandas as pd
@@ -10,13 +11,15 @@ sentence = "今日は暑い日だった。"
 
 # 単語リストをベクトルリストへ変換
 df = pd.read_csv(comp_vector_list, index_col=0, header=None)
-print(df.iloc[:,0])
 
-def to_vector(sentence):
+def to_vector(sentence, tokenizer="mecab"):
   # 文を形態素解析＋原形に戻して単語リストへ
   line = moji.zen_to_han(sentence, kana=False)
   line = re.sub("[\uFF01-\uFF0F\uFF1A-\uFF20\uFF3B-\uFF40\uFF5B-\uFF65\u3001-\u303F]", '', line)
-  word_list = m.mecab_tokenizer(line)
+  if(tokenizer=="ginza"):
+    word_list = g.ginza_tokenizer(line)
+  else:
+    word_list = m.mecab_tokenizer(line)
 
   sentence_vec = []
   sentence_word = []
@@ -29,5 +32,3 @@ def to_vector(sentence):
       pass
 
   return(sentence_vec, sentence_word)
-
-
