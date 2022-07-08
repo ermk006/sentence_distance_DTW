@@ -4,8 +4,8 @@ from jinja2 import Environment, FileSystemLoader
 import sen_to_vec as vec
 import glob
 import pandas as pd
-env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 
+env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 tmpl = env.get_template('./html/tmp/temp01.html')
 
 
@@ -28,7 +28,7 @@ def get_n_files():
 def view(f_easy, f_news, word_list=False, tokenizer="mecab"):
   with open(f_easy) as fe:
     lines_easy = fe.readlines()
-    print(lines_easy)
+    #print(lines_easy)
 
   e_sentence_num = []
   for i, line in enumerate(lines_easy):

@@ -1,40 +1,35 @@
 # 学習済みword2vecモデルが100次元ベクトルなので、3次元に次元削減する。
-from operator import index
-from gensim.models import KeyedVectors
-from gensim.models import word2vec
 import pandas as pd
-import csv
-import sklearn
 from sklearn.decomposition import PCA
+import time
 
-bi_file = './model/word2vec.model'
-pca3_file = './out/pca3.csv'
+start = time.perf_counter()
 
-#model = word2vec.Word2Vec.load(bi_file)
-model = KeyedVectors.load_word2vec_format(bi_file)
-# print("[vocab count]",model.vectors.shape[0])
+def comp(in_file, out_file):
+  df = pd.read_csv(in_file, encoding='UTF-8', sep=" ", header=None, index_col=None, skiprows=1)
+  X = df.iloc[:, 1:]
+  y = df.iloc[:, 0]
 
+  pca = PCA(n_components=3)
+  comp_X = pca.fit_transform(X)
 
-# 全部の単語リストとベクトルを取り出してcsvから読み込む
-#for word in model.vocab:
-#    print(word, model[word])
+  comp_data = pd.DataFrame(comp_X)
 
-df = pd.read_csv(bi_file, encoding='UTF-8', sep=" ", header=None, index_col=None, skiprows=1)
-X = df.iloc[:, 1:]
-y = df.iloc[:, 0]
+  pca_df = pd.concat([y, comp_data], axis=1)
+  pca_df.to_csv(out_file, index=False, header=None)
 
+if __name__=="__main__":
+  print("which model? [1] mecab / [2] ginza")
+  tokenizer = input("Press key [1] or [2]......")
 
-pca = PCA(n_components=3)
-comp_X = pca.fit_transform(X)
-
-comp_data = pd.DataFrame(comp_X)
-
-'''
-print(y.shape)
-print(y.head(100))
-print(comp_data.head(100))
-print(comp_data.shape)
-'''
-pca_df = pd.concat([y, comp_data], axis=1)
-pca_df.to_csv(pca3_file, index=False, header=None)
+  if(tokenizer == "1"):
+    print("compress vector of mecab model")
+    comp("./model/word2vec_mecab.model", "./out/pca3_mecab.csv")
+  elif(tokenizer == "2"):
+    print("compress vector of ginza model")
+    comp("./model/word2vec_ginza.model", "./out/pca3_ginza.csv")
+  else:
+    print("Press 1 or 2")
+  
+  print("TIME(s):", time.perf_counter() - start)
 
