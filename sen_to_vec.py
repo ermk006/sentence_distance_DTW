@@ -1,6 +1,6 @@
 # 文章を形態素解析してベクトル列に変換する
-import mecab_tokenizer as m
-import ginza_tokenizer as g
+import mecab_tokenfile as m
+import ginza_tokenfile as g
 import mojimoji as moji
 import re
 import pandas as pd
@@ -28,7 +28,7 @@ def to_vector(sentence, tokenizer="mecab"):
       sentence_vec.append(list(df.loc[w]))
       sentence_word.append(w)
     except:
-      # print("NO WORD IN LIST!! :", w)
+      print("NO WORD IN LIST!! :", w)
       pass
 
   return(sentence_vec, sentence_word)

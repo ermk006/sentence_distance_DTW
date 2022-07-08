@@ -53,11 +53,6 @@ def path(x, y, word_list=False, rev=False, tokenizer="mecab"):
 
   distance, path = fastdtw(vec_x, vec_y, dist=euclidean)
   print("distance:" ,distance)
-
-  #print(path)
-  #y1 = [1 for i in range(len(vec_x))]
-  #y2 = [0 for i in range(len(vec_y))]
-
   print(path)
   for xi, yi in path:
     print(word_x[xi], ":", word_y[yi])

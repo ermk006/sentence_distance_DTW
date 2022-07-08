@@ -1,32 +1,63 @@
 # -*- coding:utf-8 -*-
+from locale import locale_encoding_alias
 from jinja2 import Environment, FileSystemLoader
 import sen_to_vec as vec
+import glob
+import pandas as pd
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 
 tmpl = env.get_template('./html/tmp/temp01.html')
 
+
+# easyのファイルパス全てを取得
+def get_e_files():
+  files = glob.glob("./data/easy/*.txt")
+  li_e_files = []
+  for file in files:
+    li_e_files.append(file)
+  return li_e_files
+
+# newsのファイルパス全てを取得
+def get_n_files():
+  files = glob.glob("./data/news/*.txt")
+  li_n_files = []
+  for file in files:
+    li_n_files.append(file)
+  return li_n_files
+
 def view(f_easy, f_news, word_list=False, tokenizer="mecab"):
   with open(f_easy) as fe:
     lines_easy = fe.readlines()
-    html = tmpl.render({"easy_sentences":lines_easy})
+    print(lines_easy)
 
-#  for i, line in enumerate(lines_easy):
-#    vec_e, word_e = vec.to_vector(line, tokenizer)
-#    print(word_e)
-#    print("input1_len:",len(vec_e))
+  e_sentence_num = []
+  for i, line in enumerate(lines_easy):
+    vec_e, word_e = vec.to_vector(line, tokenizer)
+    for word in word_e:
+      e_sentence_num.append([i, word])
+  
+  df_e = pd.DataFrame(e_sentence_num, columns=['e_num', 'e_word'])
 
-
+  
   with open(f_news) as fn:
     lines_news = fn.readlines()
-    html = tmpl.render({"news_sentences":lines_news})
 
-#  for j, line in enumerate(lines_news):
-#    pass
+  n_sentence_num = []
+  for i, line in enumerate(lines_news):
+    vec_n, word_n = vec.to_vector(line, tokenizer)
+    for word in word_n:
+      n_sentence_num.append([i, word])
+
+  df_n = pd.DataFrame(n_sentence_num, columns=['n_num', 'n_word']) 
+
+#  print(pd.concat([df_e, df_n], axis=1))
+
+'''
   html = tmpl.render({"num_article":"001", "easy_sentences":lines_easy, "news_sentences":lines_news})
-
 
   with open('html/out/test.html',mode='w',encoding="utf-8") as f:
     f.write(str(html))
+'''
 
 if __name__=="__main__":
   view("./data/easy/001.txt", "./data/news/001.txt")
