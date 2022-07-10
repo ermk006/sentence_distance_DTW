@@ -1,9 +1,12 @@
 # -*- coding:utf-8 -*-
+from http.client import PRECONDITION_REQUIRED
 from locale import locale_encoding_alias
 from jinja2 import Environment, FileSystemLoader
 import sen_to_vec as vec
 import glob
 import pandas as pd
+import preproc as pre
+import plot_dtw as dtw
 
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 tmpl = env.get_template('./html/tmp/temp01.html')
@@ -25,32 +28,41 @@ def get_n_files():
     li_n_files.append(file)
   return li_n_files
 
-def view(f_easy, f_news, word_list=False, tokenizer="mecab"):
+def view(f_easy, f_news, tokenizer="mecab"):
   with open(f_easy) as fe:
     lines_easy = fe.readlines()
     #print(lines_easy)
 
   e_sentence_num = []
+  e_vec_list = []
   for i, line in enumerate(lines_easy):
-    vec_e, word_e = vec.to_vector(line, tokenizer)
+    vec_e, word_e = vec.to_vector(pre.pre(line), tokenizer)
+    e_vec_list.extend(vec_e)
     for word in word_e:
       e_sentence_num.append([i, word])
   
   df_e = pd.DataFrame(e_sentence_num, columns=['e_num', 'e_word'])
-
   
   with open(f_news) as fn:
     lines_news = fn.readlines()
 
+  n_vec_list = []
   n_sentence_num = []
   for i, line in enumerate(lines_news):
-    vec_n, word_n = vec.to_vector(line, tokenizer)
+    vec_n, word_n = vec.to_vector(pre.pre(line), tokenizer)
+    n_vec_list.extend(vec_n)
     for word in word_n:
       n_sentence_num.append([i, word])
 
   df_n = pd.DataFrame(n_sentence_num, columns=['n_num', 'n_word']) 
 
-#  print(pd.concat([df_e, df_n], axis=1))
+  dist, path = dtw.path_vec(e_vec_list, n_vec_list)
+
+  for pair in path:
+    
+    pass
+
+
 
 '''
   html = tmpl.render({"num_article":"001", "easy_sentences":lines_easy, "news_sentences":lines_news})
@@ -60,7 +72,7 @@ def view(f_easy, f_news, word_list=False, tokenizer="mecab"):
 '''
 
 if __name__=="__main__":
-  view("./data/easy/001.txt", "./data/news/001.txt")
+  view("./data/easy/002.txt", "./data/news/002.txt")
 
 
 """

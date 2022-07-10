@@ -11,13 +11,20 @@
         <h2>{{num_article}}</h2>
         <div>
           <table>
-            {% for alphabet, no in data %}
-            <th class="num{{num}}">{{e_word}}</th><td>{{n_word}}</td>
+            <thead>
+              <tr>
+                <th>easy</th>
+                <th>news</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for easy, no in news %}
+              <tr>
+                <td>{{easy}}</td>
+                <td>{{news}}</td>
+              </tr>
+            </tbody>
           </table>
-          <p>{{easy_sentences}}</p>
-        </div>
-        <div>
-          <p>{{news_sentences}}</p>
         </div>
     </body>
 </html>

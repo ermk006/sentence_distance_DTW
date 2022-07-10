@@ -40,8 +40,8 @@ def path(x, y, word_list=False, rev=False, tokenizer="mecab"):
   vec_x, word_x = vec.to_vector(x, tokenizer)
   vec_y, word_y = vec.to_vector(y, tokenizer)
 
-  print("input1_len:",len(vec_x))
-  print("input2_len:",len(vec_y))
+  #print("input1_len:",len(vec_x))
+  #print("input2_len:",len(vec_y))
 
   if(rev==True):
     word_x.reverse()
@@ -51,11 +51,14 @@ def path(x, y, word_list=False, rev=False, tokenizer="mecab"):
     print("easy:",word_x)
     print("news:",word_y)
 
-  distance, path = fastdtw(vec_x, vec_y, dist=euclidean)
-  print("distance:" ,distance)
-  print(path)
-  for xi, yi in path:
-    print(word_x[xi], ":", word_y[yi])
+  return fastdtw(vec_x, vec_y, dist=euclidean)
+  #print("distance:" ,distance)
+  #print(path)
+  #for xi, yi in path:
+  #  print(word_x[xi], ":", word_y[yi])
+
+def path_vec(x, y):
+  return fastdtw(x, y, dist=euclidean)
   
 
 if __name__=="__main__":
