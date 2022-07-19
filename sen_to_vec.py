@@ -1,6 +1,5 @@
 # 文章を形態素解析してベクトル列に変換する
 import pandas as pd
-#import csv
 import preproc as pre
 
 vector_list_m = "./out/pca3_mecab.csv"

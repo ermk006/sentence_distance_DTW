@@ -51,6 +51,7 @@ def path(x, y, word_list=False, rev=False, tokenizer="mecab"):
     print("easy:",word_x)
     print("news:",word_y)
 
+
   return fastdtw(vec_x, vec_y, dist=euclidean)
   #print("distance:" ,distance)
   #print(path)

@@ -1,0 +1,17 @@
+body{
+  padding: 20px;
+}
+
+div{
+  background-color: #ffebe9;
+  border-bottom: blueviolet solid 2px;
+  margin-botom: 10px;
+}
+
+p.e{
+  color: cadetblue;
+}
+
+p.n{
+  color: darkblue;
+}

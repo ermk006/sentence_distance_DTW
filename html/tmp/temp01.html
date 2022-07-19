@@ -3,28 +3,18 @@
     <head>
       <meta charset="utf-8">
       <title>DTW {{num_article}}</title>
+      <link rel="stylesheet" href="./style.css">
       <meta name="description" content="DTWで平易文に対応する単語を通常文から見つけて可視化する">
 
     </head>
     <body>
         <h1>DTW</h1>
-        <h2>{{num_article}}</h2>
+        <h2>Article No. {{num_article}}</h2>
+        {% for easy, news in data %}
         <div>
-          <table>
-            <thead>
-              <tr>
-                <th>easy</th>
-                <th>news</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for easy, no in news %}
-              <tr>
-                <td>{{easy}}</td>
-                <td>{{news}}</td>
-              </tr>
-            </tbody>
-          </table>
+          <p class="e">[easy] {{easy}}</p>
+          <p class="n">[news] {{news}}</p>
         </div>
-    </body>
+        {% endfor %}
+      </body>
 </html>
