@@ -37,6 +37,10 @@ def path_to_list(path):
     return [list(r) for r in zip(*path)]
 
 
+def last_index(li, x):
+  num = [i for i, _x in enumerate(li) if _x == x]
+  return num[-1]
+
 def view(number, tokenizer="mecab"):
   f_easy = "./data/easy/" + number + ".txt"
   f_news = "./data/news/" + number + ".txt"
@@ -81,14 +85,15 @@ def view(number, tokenizer="mecab"):
     n = [i for i, li in enumerate(e_sentence_num) if li[0] == k]
     if(len(n) > 1):
       easy_list.append(" ".join(e_word_list[min(n):max(n)+1]))
-      news_list.append(" ".join(n_word_list[n_l[e_l.index(min(n))]:n_l[e_l.index(max(n))]]))
+      news_list.append(" ".join(n_word_list[n_l[e_l.index(min(n))]:n_l[last_index(e_l, max(n))]]))
 
-  html = tmpl.render({"num_article":number, "data":zip(easy_list, news_list)})
+#  html = tmpl.render({"num_article":number, "data":zip(easy_list, news_list)})
 
-  with open('html/out/' + number +'.html',mode='w',encoding="utf-8") as f:
-    f.write(str(html))
+#  with open('html/out/' + number +'.html',mode='w',encoding="utf-8") as f:
+#    f.write(str(html))
 
 if __name__=="__main__":
   for file in get_e_files():
+    print(file)
     number = re.search('[0-9]+', file).group()
     view(number)
