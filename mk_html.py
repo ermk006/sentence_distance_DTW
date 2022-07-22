@@ -87,13 +87,12 @@ def view(number, tokenizer="mecab"):
       easy_list.append(" ".join(e_word_list[min(n):max(n)+1]))
       news_list.append(" ".join(n_word_list[n_l[e_l.index(min(n))]:n_l[last_index(e_l, max(n))]]))
 
-#  html = tmpl.render({"num_article":number, "data":zip(easy_list, news_list)})
+  html = tmpl.render({"num_article":number, "data":zip(easy_list, news_list)})
 
-#  with open('html/out/' + number +'.html',mode='w',encoding="utf-8") as f:
-#    f.write(str(html))
+  with open('html/out/' + number +'.html',mode='w',encoding="utf-8") as f:
+    f.write(str(html))
 
 if __name__=="__main__":
   for file in get_e_files():
-    print(file)
     number = re.search('[0-9]+', file).group()
     view(number)
