@@ -2,7 +2,8 @@
 import pandas as pd
 import preproc as pre
 
-vector_list_m = "./out/pca3_mecab.csv"
+#vector_list_m = "./out/pca3_mecab.csv"
+vector_list_m = "./out/pca30_mecab.csv"
 vector_list_g = "./out/pca3_ginza.csv"
 
 # 単語リストをベクトルリストへ変換
@@ -27,7 +28,8 @@ def to_vector(sentence, tokenizer="mecab"):
       sentence_word.append(w)
     except:
       print("NO WORD IN LIST!! :", w)
-      sentence_vec.append([0, 0, 0])
+      sentence_vec.append([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+#      sentence_vec.append([0, 0, 0])
       sentence_word.append(w)
       pass
 

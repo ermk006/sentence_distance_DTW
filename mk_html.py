@@ -89,7 +89,7 @@ def view(number, tokenizer="mecab"):
 
   html = tmpl.render({"num_article":number, "data":zip(easy_list, news_list)})
 
-  with open('html/out/' + number +'.html',mode='w',encoding="utf-8") as f:
+  with open('html/out/30/' + number +'.html',mode='w',encoding="utf-8") as f:
     f.write(str(html))
 
 if __name__=="__main__":
