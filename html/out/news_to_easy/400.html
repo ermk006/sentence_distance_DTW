@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>DTW 400</title>
+      <link rel="stylesheet" href="./style.css">
+      <meta name="description" content="DTWで平易文に対応する単語を通常文から見つけて可視化する">
+
+    </head>
+    <body>
+        <h1>Article No. 400</h1>
+        <h2>DTW distance = 16339.227823664902</h2>
+        
+        <div>
+          <p class="d">[DTW distance] 417.5115742471331</p>
+          <p class="e">[news] 特別措置法 に 基づく 緊急事態宣言 を 受ける て 、 菅総理 大臣 は 0 日 夜 、 総理大臣官邸 で 記者 会見 する 、 「 0 か月 後 に は 、 必ず 事態 を 改善 する せる ため 、 ありとあらゆる 方策 を 講じる て いく 」 と 述べる 、 国民 に 協力 を 呼びかける ます た 。</p>
+          <p class="n">[easy] 東京都 と 千葉県 、 埼玉県 、 神奈川県 で は 、 新しい コロナウイルス が うつる た 人 が 増える 続ける て 、 止まる ない なる て いる ます</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 145.20633892359072</p>
+          <p class="e">[news] 菅総理 大臣 は 記者会見 で 「 先 ほど 新型コロナ ウイルス対策 本部 を 開く 、 緊急事態宣言 を 決定 する た 。</p>
+          <p class="n">[easy] 菅総理 大臣 は 0 日 の 夜</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 225.0976886929071</p>
+          <p class="e">[news] 宣言 の 対象 は 東京 、 千葉 、 埼玉 、 神奈川 の 0 都 0 県 で 、 期間 は 0 か月 と する た 」 と 述べる ます た 。</p>
+          <p class="n">[easy] 、 東京都 と 0 つ</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 482.4727580450251</p>
+          <p class="e">[news] その 上 で 、 具体 的 だ 措置 について 「 第 0 に 飲食店 の 0時 まで の 営業時間 短縮 、 第 0 に テレワーク による 出勤 者 数 0 割 減 、 第 0 に 0時 以降 の 不要不急の外出 の 自粛 、 第 0 に スポーツ観戦 、 コンサート など の 入場 制限 だ 」 と 説明 する ます た 。</p>
+          <p class="n">[easy] の 県 に 0 月 0 日 まで 緊急事態宣言 を 出す ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 177.99129503952554</p>
+          <p class="e">[news] 菅総理 大臣 は 「 飲食店 の 営業 時間短縮 以外 に も 感染 減少 に 効果 的 だ 対策 を 打ち出す 。</p>
+          <p class="n">[easy] そして 、 できるだけ 人 の 近く に 行く ない よう に する て ほしい と</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 44.10930820993488</p>
+          <p class="e">[news] まずは テレワーク だ 。</p>
+          <p class="n">[easy] ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 94.72488256630768</p>
+          <p class="e">[news] 出勤 する ば どうしても 同僚 と の 食事 や 会話 が 増える 。</p>
+          <p class="n">[easy] 食べる たり 飲む</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 157.85590599070258</p>
+          <p class="e">[news] そうした 機会 を できる 限り 減らす 、 出勤 者 数 の 0 割 減 を お願い する たい 。</p>
+          <p class="n">[easy] だり する 店 に は 、 午後0時 まで に 店 を</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 254.8048303770479</p>
+          <p class="e">[news] 昨年来 、 定着 する つつ ある 新しい 働く 方 を さらに 進める 、 都会 で も 地方 で も 同じ 働く 方 が できる よう に テレワーク を 強力 に 推進 する たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] 閉める よう に お願い する ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 126.80965977277447</p>
+          <p class="e">[news] 菅総理 大臣 は 「 飲食店 について は 、 0時 まで の 時間短縮 を 徹底 する 。</p>
+          <p class="n">[easy] 会社 に は 、</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] お酒 の 提供 は 、 0時 まで と する こと を 要請 する 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 本日 の 政令 改正 によって 、 各 知事 が 要請 に 従う ない 飲食店 を 公表 する こと も 可能 に なる た 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] そのうえで 「 多く の 事業者 は 、 すでに 0 か月 以上 にわたって 、 時間短縮 に ご 協力 を いただく て おる 、 厳しい 経営 状況 に ある 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] そのため 、 協力 金 に対する 支援 額 を 引き上げる 、 0 都 0 県 の 0時 まで の 時間短縮 に対して は 、 0 か月 あたり 0 万 円 まで の 協力 金 を 国 が 支援 を する 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 教育現場 へ の 対応 について 「 学校 について は 、 これ まで 学校 から 地域 に 感染 が 広がる た 例 は ほとんど ない 、 その 中 で 、 未来 を 担う 子供達 の 学び の 機会 を 守る たい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 今回 は 小学校 、 中学校 、 高校 、 大学 、 幼稚園 、 保育園 について 休校 、 休園 は お願い する ない 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 大学 について は 、 対面 の 授業 と オンライン で の 授業 を 効果的 に 組み合わせる て いただく よう に 要請 する 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 「 昨年 以来 、 コロナ の 感染拡大 の 中 でも 、 わが国 の 失業率 は 直近 で 0% で 、 主要 国 の 中 で 最も 低い 水準 で 推移 する て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 雇用 を 守る こと が 政治 の 責務 だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 今後 も 雇用 を 守る 、 事業 を 継続 する て いただく こと を 優先 に 取り組み を 続ける 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] そのうえで 「 パート や 非正規 労働 の 方々 を 含める て 、 休業 する た 場合 の 雇用調整助成金 は 、 0 日 最大 0 万 0円 を 支給 する て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 手元 の 資金 に 困る て いる 方々 の ため の 最大 0 万 円 の 緊急 小口 融資 について も 、 昨年来 、 0 億 円 を 利用 いただく て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 公庫 など から 最大 0 万 円 の 無利子 無担保 の 融資 も 行う て おる 、 そのため の 十分 だ 資金 を 用意 する た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ぜひ みなさま に 使う て いただく よう 、 手続き も 簡単 に する たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 「 早期 に 営業時間 の 短縮 に 取り組む で いただく た 地域 で は その 効果 が あらわれる 、 感染者 を 抑える こと が できる て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 現在 の 感染 の 中心 は 0 都 0 県 だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] この 0 週間 だ 、 全国 平均 の 感染者 数 の 約 半分 が この 0 都 0 県 に 集中 する て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 年末年始 から 本日 に 至る まで 感染者数 は 極め手 高い 、 本日 、 東京 で は 0 人 を 上回る など 厳しい 状況 だ ある 、 大変 だ 危機 感 を 持つ て いる 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 、 「 今後 、 緊急事態宣言 による 対策 に 続く 、 特別措置法 の 改正 、 ワクチン の 早期 接種 と 、 段階 を 踏む で 取り組む 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] まずは 緊急事態宣言 により 、 効果 的 だ 対策 を 行う 、 なんと する て も 感染拡大 を 食い止める 、 減少傾向 に 転じる させる 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] その 上 で 、 特別措置法 の 改正 について 「 罰則 など により 強制力 を 付与 する こと によって 、 より 実効 的 だ 対策 を 可能 に する たい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 法案 の 内容 に関する 議論 を 急ぐ 、 早期 に 国会 に 提出 する 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ワクチン の 接種 について 「 製薬会社 の 治験 データ の 作業 を 前倒し する 、 安全性 、 有効 性 の 審査 を 行う た 上 で 、 できる 限り 、 0 月下 旬 まで に は 接種 を 開始 できる よう に 準備 する 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 、 医療 提供 体制 に関して 「 病床 が ひっ迫 する 0 都 0 県 で 、 コロナ対応 の 病床 を 大幅 に 増やす こと が できる よう に する 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 民間病院 を はじめ 、 新た に 対応 病床 を 増やす た 場合 に は 、 0 床 あたり 0 万 円 の 補助 を 、 従来 の 支援 に 上乗せ する 、 これ により 重症 者 の 病床 が ある ば 、 0 床 あたり 凡そ 0 万 円 の 強力 だ 支援 が 行う れる よう に なる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 各 知事 の 要請 が ある ば 、 自衛隊 の 医療 チーム を いつ でも 投入 する こと が できる よう に 万全 の 体制 を 整える て いる 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 「 最近 の 0 都 0 県 における 感染者 の 半分 以上 が 0 代 以下 の 若者 だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 皆さん は 、 感染 する て も 多く の 場合 、 重い 症状 が 出る こと は ない 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] しかし 、 若い 方々 へ の 感染 が 、 さらなる 感染拡大 に つながる て いる という 現実 が ある 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] どう か 、 両親 や 家庭 、 友人 など 、 世代 を 超える て 、 大切 だ 命 を 守る ため に 、 自身 の こと と 捉える 、 行動 を お願い を する たい 」 と 若者 に 向ける て 呼びかける ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] その 上 で 「 0 か月 後 に は 、 必ず 事態 を 改善 する せる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] そのため に も 、 私自身 、 内閣総理大臣 として 、 感染拡大 防止 の ため に 全力 を 尽くす 、 ありとあらゆる 方策 を 講じる て いく 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 「 夜間 の 飲食 や 会話 を 含める た 、 感染リスク を 防ぐ ため 、 午後0時 以降 の 不要不急の外出 の 自粛 を お願い を する 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ぜひ 徹底 する て いただく たい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] さらに 、 スポーツ観戦 、 コンサート について は 、 今回 、 入場者 数 を 厳格 化 する 、 一律 に 入場者 数 を 0 人 まで に する とともに 、 場内 の 飲食 を 控える よう に 要請 を する 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 「 pcr検査 について は 全額 、 国 の 負担 により 機器 を 整備 する て おる 、 検査 の 必要性 を 踏まえる て 検査 体制 を 拡充 する て いく たい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 必要 だ 方 に は 検査 を 受ける られる よう に する たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 、 記者団 から 感染 が 収まる ない た 場合 、 飲食 が 中心 と なる て いる 対策 の 範囲 を 広げる 、 期間 や 対象地域 の 拡大 を 検討 する の か 質問 する れる た の に対し 「 まずは 専門家 が 感染 防止 対策 の 急所 と する て いる 飲食店 の 営業時間 短縮 を 今回 行う 、 テレワーク の 0 割 実現 、 0時 以降 の 外出自粛 、 イベント の 人数 制限 の 0点 を パッケージ として 随時 、 状況 を 見る ながら 必要 だ 対策 を 取る て いく たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] その 上 で 、 経済 へ の 影響 について 「 経済 へ の 影響 は 避ける られる ない と 思う が 、 先 に 財政支出 0 兆 円 、 事業 規模 0 兆 円 の 経済 対策 を 決定 する て いる ので 、 こうした もの を 活用 する ながら 雇用 の 維持 と 事業 継続 に しっかり と 対応 する て いく たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 、 大阪府 や 愛知県 の 知事 が 、 緊急事態宣言 の 必要性 に 言及 する て いる こと について 「 大阪府 や 愛知県 は 、 緊急事態宣言 に 準じる 対応 を する こと が できる よう に なる て いる ので 、 状況 を 見る ながら しっかり と 対応 する て いく たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 緊急事態宣言 の 延長 の 可能性 を 質問 する れる た の に対し 「 仮定 の こと について 私 から は 答え は 控える たい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] とにかく 0 か月 だ 、 何 と する て も 感染拡大 防止 を する たい という 思い で 取り組む で いく たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 「 0 年 近く にわたる コロナ と の 戦い で 、 痛み を 伴う 自粛要請 に 協力 を いただく て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 国民 の 皆さま に 心から 感謝 を 申し上げる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 今回 の 世界規模 の 感染 の 波 は 、 私たち が 想像 を する て いる た もの を 越える 、 厳しい もの に なる て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] しかし 、 私 は この 状況 は 必ず 克服 できる と 思う 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] その 上 で 「 そのため に 、 もう一度 皆さま に 制約 の ある 生活 を お願い する ぬ を 得る ない 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 私たち は この 0 年間 の 経験 で 、 多く の こと を 学ぶ で くる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 大事 だ こと は 、 会話 の とき は 必ず マスク を する 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 290.67493442763777</p>
+          <p class="e">[news] さらに 外食 を 控える て 、 テレワーク 0 割 、 夜 0時 以降 の 不要不急の外出 の 自粛 、 この 0点 を 徹底 する ば 、 必ず 感染 を 抑える こと は できる 」 と 指摘 する ます た 。</p>
+          <p class="n">[easy] 家出 仕事 を する 人 を 多い する</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 東京オリンピック ・ パラリンピック の 開催 について 「 感染対策 を 万全 に する て 安全 安心 だ 大会 を 実現 する たい という 決意 だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 252.56676887779108</p>
+          <p class="e">[news] 世界 で ワクチン の 接種 が 始まる て おる 、 日本 で も 、 0 月下 旬 まで に は なんとか 予防接種 を する たい と 思う て いる 。</p>
+          <p class="n">[easy] 、 会社 に 来る 人 を 0%</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 231.11783511489213</p>
+          <p class="e">[news] こうした こと に しっかり 対応 する て いく こと によって 、 国民 の 雰囲気 も 変わる て くる の だ は ない か 」 と 述べる ます た 。</p>
+          <p class="n">[easy] する よう に お願い する ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 501.937116958091</p>
+          <p class="e">[news] 菅総理 大臣 は 、 記者団 から 大阪府 や 愛知県 に対して 緊急事態宣言 を 出す か どう か 質問 する れる た の に対し 「 緊急事態宣言 を 出す に は 、 専門家 の 委員 の ご 理解 を いただく なか で 行う わけ だ が 、 現時点 において は 、 私 は そうした 状況 に は ない と 思う 」 と 述べる ます た 。</p>
+          <p class="n">[easy] 菅総理 大臣 は 「 東京都 と 0 つ の 県 で は 、 最近 ウイルス が うつる た 人 の 半分 以上 が 0歳 より 若い人 です 。 若い人 は 、 親 や 家族 、</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 284.1493376124526</p>
+          <p class="e">[news] 菅総理 大臣 は 記者会見 で 、 特別措置法 の 改正 について 「 特別措置法 で は 、 国民 の 自由 と 権利 に 制限 が 加える られる とき でも 、 必要 最小限 だ ない ば なる ない と 規定 する れる て いる 。</p>
+          <p class="n">[easy] 友達 など に うつす ない よう に 考える て 行動 する て</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 183.02164037854521</p>
+          <p class="e">[news] この 規定 に従って 適切 に 対処 する の が 、 政府 の 基本 的 だ 考え方 だ 。</p>
+          <p class="n">[easy] くださる 」 と 言う ます た 。 そして 「 0 か月 だ</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 286.4045183940081</p>
+          <p class="e">[news] また 、 憲法上 、 財産権 に関して は 、 公共の福祉 の 実現 の ため 、 必要 が ある 場合 に 、 法律 により 合理 的 だ 範囲 内 の 制約 を 加える こと が ある と 規定 する れる て いる 。</p>
+          <p class="n">[easy] 、</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] こうした 規定 の なか で 、 適切 に 対処 する て いく たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 菅総理 大臣 は 、 持続化給付金 の 第 0 弾 を 検討 する か どう か 問う れる 、 「 雇用 を 守る て 事業 を 継続 する こと が 大事 だ と 思う て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] まずは 資金繰り の 支援 を 行う て いく たい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 0 都 0 県 で は 、 緊急事態宣言 による 飲食店 の 時間短縮 など で 厳しい 影響 を 受ける 方 も 出る て くる と 思う 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 200.28261065331841</p>
+          <p class="e">[news] そうした 方 について は どの よう だ 支援 策 が ある の か 検討 する て いく たい 」 と 述べる ます た 。</p>
+          <p class="n">[easy] 必ず いい 状態 に する ます</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 190.7401747587578</p>
+          <p class="e">[news] 菅総理 大臣 は 「 何 と する て も これ 以上 の 感染拡大 を 食い止める 、 感染 を 減少傾向 に 転じる させる 。</p>
+          <p class="n">[easy] そのため に 、 できる こと を</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 84.75381293903256</p>
+          <p class="e">[news] そのため に 今回 の 緊急事態宣言 を 決断 する た 」 と 述べる ます た 。</p>
+          <p class="n">[easy] 全部 やる ます 」 と 言う ます た</p>
+        </div>
+        
+      </body>
+</html>

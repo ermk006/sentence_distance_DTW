@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>DTW 153</title>
+      <link rel="stylesheet" href="./style.css">
+      <meta name="description" content="DTWで平易文に対応する単語を通常文から見つけて可視化する">
+
+    </head>
+    <body>
+        <h1>Article No. 153</h1>
+        <h2>DTW distance = 14970.066783801713</h2>
+        
+        <div>
+          <p class="d">[DTW distance] 114.59152110460188</p>
+          <p class="e">[news] 大相撲 の 関脇 正代 が 秋場所 千秋楽 、 0 勝 0 敗 で 初 優勝 を 果たす ます た 。</p>
+          <p class="n">[easy] 0 日 、 大相撲 の 0 月 の 大会 が 終わる ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 228.75663500027338</p>
+          <p class="e">[news] 大相撲九月場所 は 0 日 目 を 終える て 関脇 正代 が ただ 0 人 0 敗 で トップ に 立つ 、 大関 貴 景勝 と 平幕 の 翔 猿 が 星 の 差 0 つ で 追う 展開 です た 。</p>
+          <p class="n">[easy] 関脇 の 正代 が 0回 の 相撲 の うち 0回 勝つ て 優勝 する ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 190.22681542694244</p>
+          <p class="e">[news] 千秋楽 、 正代 は 翔 猿 と 対戦 する 、 突き落とす で 勝つ て 、 0 勝 0 敗 で 初 優勝 を 果たす ます た 。</p>
+          <p class="n">[easy] 正代 は 0 月 と 0 月 と 0 月 の 大会 で 、 全部 で 0回 勝つ て いる</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 58.33091548706501</p>
+          <p class="e">[news] 時津風 部屋 の 正代 は 、 熊本県 出身 の 0歳 。</p>
+          <p class="n">[easy] 、 関脇</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 347.83130965691686</p>
+          <p class="e">[news] 0 場所 連続 の 関脇 で 迎える た 今場所 は 、 相手 の 力 を 受け流す 上半身 の 柔らかい さ に 加える て 前 に 出る 圧力 が 増す 、 0 日 目 まで に 0 敗 を 喫す た ものの 相手 を 圧倒 する 相撲 が 目立つ ます た 。</p>
+          <p class="n">[easy] 0 つ 上 の</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 273.8460521574687</p>
+          <p class="e">[news] 0 日 目 に は トップ に 並ぶ で いる た 貴景勝 、 0 日 目 に は 大関 朝乃 山 を 相次ぐ で 破る 、 重圧 が かかる 終盤 に なる て も 勝負 強い さ を 見せる ます た 。</p>
+          <p class="n">[easy] 大関 に 上がる そう です</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 熊本県出身 力士 の 優勝 は 初めて だ 、 時津風部屋 の 力士 の 優勝 は 、 昭和 0 年 名古屋場所 の 大関 北葉山 以来 、 0 年 ぶり です 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 白鵬 と 鶴竜 の 両 横綱 が 休場 する 横綱 不在 と なる た 今場所 は 、 終盤 まで 混戦 と なる ます た が 、 この 0 年 で 何度 も 優勝争い を する など 確か だ 実力 を つける た 正代 が 、 両 大関 を 退ける て 念願 の 初 優勝 を 果たす ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 正代 「 地元 の 声援 が 力 に 」</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 正代 は 、 取組後 の 優勝 インタビュー で まず 「 信じる られる ない です ね 」 と 心境 を 話す ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 優勝 を 決める た 翔 猿 と の 一番 について は 、 「 初めて の 対戦 だ た ので 、 とても 意識 する た し 、 やる にくい さ を 感じる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 今 まで の 相撲 人生 で 一番 緊張 する た かも しれる ない 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] よく 体 が 反応 する て くれる た 」 と 振り返る ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 地元 、 熊本 から の 声援 について は 「 たくさん の 声援 など が 力 に なる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 両親 も 自分 に 心配 を かける ない よう に 気 を つかう て いる た と 思う が 、 とりあえず 優勝 できる て 両親 に 感謝 する たい 」 と 話す ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 みずから の 大関昇進 について 尋ねる られる と 「 ちょっと わかる ない 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] まだ 全然 わかる ない て 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 大関 は 相撲界 に 入る 前 から 憧れる て いる 地位 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 信じる られる ない 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 正代 学生横綱 から 大相撲 に</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 初 優勝 を 果たす た 正代 は 熊本県宇土市 出身 の 0歳 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 右 四つ や もろ差し など 四つ身 の 相撲 が うまい 、 相手 の 力 を 受け流す よう だ 上半身 の 柔らかい さ が 持ち味 で 、 土俵際 で の 逆転 も 得意 と する て いる ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 東京農業大学 で は 0 年生 の 時 に 「 学生横綱 」 の タイトル を 獲得 する など 活躍 する 、 平成 0 年 春場所 、 前相撲 で 初土俵 を 踏む 、 持ち前 の 四つ相撲 で 番付 を 上げる て いく ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 平成 0 年 の 初場所 に は 新 入幕 、 平成 0 年 の 初場所 に は 新 関脇 昇進 を 果たす ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 年 0 場所 制 と なる た 昭和 0 年 以降 に 前相撲 で デビュー する た 力士 として は 、 所要 0 場所 で の 新 入幕 が 0 番目 、 所要 0 場所 で の 新 関脇 昇進 は 0 番目 と 、 いずれ も スピード 出世 です た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 一方 で 新十両 や 新 入幕 の 会見 で は 、 「 緊張 する 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 対戦 する た 異人 は いない 」 と 答える など 弱気 だ 一面 も 見せる 、 “ ネガティブ 力士 として 話題 に なる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] それでも 平成 0 年 に ふるさと で 発生 する た 「 熊本地震 」 の あと は 、 たびたび 被災地 を 訪れる 、 地元 の 期待 を 強い 自覚 する よう に なる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ことし に 入る て 立ち合う から 前 に 出る 圧力 が 増す て 、 初場所 で 優勝争い に 絡む 、 春場所 で は 関脇 に 復帰 する 初めて 三役 で 勝ち越す ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] さらに 続く 0 月 場所 で も 0 勝 を 挙げる 、 横綱 不在 と なる た 今場所 は 混戦 と なる た 終盤 で 0 日 連続 で 大関 を 破る 勝負 強い さ も 見せる て 初 優勝 を 果たす 、 確か だ 実力 を 証明 する ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 優勝 争う た 翔 猿 「 力士 人生 で 一番 楽しい た 」</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 翔 猿 は 千秋楽 の 取組 を 終える 、 「 うれしい さ 反面 、 悔しさ が 大きい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 思い切り 自分 の 相撲 を 取る う と 思う て いる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 前 に 出る て いる た が 詰め が 甘い た 」 と 振り返る ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 優勝 について は 、 「 意識 する て いる ない た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 勝る た 変わる て くる か な と 思う て いる た 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] そのうえで 翔 猿 は 、 「 自分 の 相撲 を 取れる て いる て 体 が よく 動く て いる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 力士 人生 で いちばん 楽しい た と 思う 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] これから も どんどん 楽しい 相撲 を 取る て いく たい です 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] たまたま だ と 思う れる ない よう に 、 来場所 も 稽古 を 積む で 活躍 できる よう に 頑張る ます 」 と 、 来場所 に 向ける た 意気込み も 語る て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 八角 理事長 正代 も 翔る 猿 も 評価</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 日本相撲協会 の 八角 理事長 は 、 初 優勝 を 果たす た 正代 について 「 今場所 は 初日 から 内容 が よい た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 本人 は うれしい が 、 地元 の 人 も うれしい だ う 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] この 0 年 は 優勝争い に 絡む など いい 相撲 を 取る て いる の は 確か だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 頑張る て いる ば 、 いつか いい こと が ある という こと だ の か な と 思う 」 と たたえる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 一方 、 千秋楽 で 正代 に 敗れる た 新 入幕 の 翔 猿 について も 「 負け は する た が 、 いい 相撲 だ た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 自信 が つく た の だ は ない か 」 と 評価 する て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 今場所 を 振り返る て 「 客 が 協力 する て くれる て ここ まで 来る られる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 力士 も よく 頑張る て くれる た と 思う 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 95.2712046217656</p>
+          <p class="e">[news] 感染症 の 先生 たち の 指導 の もと 開催 できる た こと は うれしい 。</p>
+          <p class="n">[easy] 正代 は</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 先生 たち の 意見 を 聞く ながら 進める ない と いける ない 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 中入り 後 の 勝敗</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 逸ノ城 に 十両 の 千代 ノ 皇 は 、 逸ノ城 が 上手 投げる で 、 勝ち越す ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 十両 の 勢 に 松鳳山 は 、 松鳳山 が 引っ掛ける 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 佐田の海 に 新 入幕 の 豊昇 龍 は 、 豊昇 龍 が 寄り切る だ 、 勝ち越し 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 佐田の海 は 負け越す ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 志摩 ノ 海 に 若 隆景 は 、 若 隆景 が 寄り切る だ 、 0 勝 目 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 徳勝 龍 に 阿武 咲 は 、 徳勝 龍 が 寄り切る 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 竜 電 に 石浦 は 、 石浦 が 下手 出し 投げる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 魁聖 に 輝 は 、 輝 が 救い 投げる で 、 勝ち越し 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 魁聖 は 負け越す ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 高安 に 明生 は 、 高安 が 突き出し で 0 勝 目 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 琴恵 光 に 宝富士 は 、 琴恵 光 が 寄り切る だ 、 勝ち越し 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 宝富士 は 負け越す です 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 61.934955363357304</p>
+          <p class="e">[news] ▽ 琴奨菊 に 照 強 は 、 照 強 が 寄り切る 。</p>
+          <p class="n">[easy] 熊本県宇土市 出身 です</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 妙義龍 に 炎 鵬 は 、 炎 鵬 が 下手 投げる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 琴 勝峰 に 玉鷲 は 、 琴 勝峰 が 突き出し で 、 0 勝 目 です 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 北勝富士 に 栃ノ心 は 、 北勝富士 が 押し出し 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 100.61291598828703</p>
+          <p class="e">[news] ▽ 碧山 に 隆 の 勝 は 、 隆 の 勝 が 押し出し で 0 勝 目 。</p>
+          <p class="n">[easy] 熊本県 の</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 碧山 は 負け越す ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 関脇 大栄翔 に 隠岐の海 は 、 大栄翔 が 突き落とす 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 霧 馬山 に 関脇 御嶽海 は 、 霧 馬山 が 寄り切る だ 、 0 勝 目 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 御嶽海 は 0 勝 0 敗 で 終える ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 0 敗 で トップ に 立つ 関脇 正代 に 、 0 敗 で 追う 新 入幕 の 翔 猿 は 、 正代 が 突き落とす で 勝つ て 、 0 勝 0 敗 で 初 優勝 を 果たす ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 熊本県出身 力士 の 優勝 は 初めて です 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 102.41885017377415</p>
+          <p class="e">[news] ▽ 大関 朝乃 山 に 大関 貴景勝 は 、 貴景勝 が 押し倒す で 、 0 勝 目 。</p>
+          <p class="n">[easy] 力士 が 優勝 する の は 初めて です</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 97.51694663301812</p>
+          <p class="e">[news] 朝乃 山 は 0 勝 0 敗 で 終える ます た 。</p>
+          <p class="n">[easy] 宇土市 で は 、 両親 や 市民 など 0 人 が</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 千秋楽 各 力士 の 談話</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 184.51877016648245</p>
+          <p class="e">[news] ▽ 返る 入幕 の 逸ノ城 は 、 千秋楽 に 勝ち越し を 決める 、 「 下がる ない で 、 投げる ない で 、 我慢 してやる う と 思う た 。</p>
+          <p class="n">[easy] テレビ の 前 で 正代 を</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 98.40787242035157</p>
+          <p class="e">[news] とりあえず 勝ち越せる て よい た 」 と 落ち着く た 様子 で 話す ます た 。</p>
+          <p class="n">[easy] 応援 する ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 289.80123087989136</p>
+          <p class="e">[news] ▽ 新 入幕 の 豊昇 龍 は 、 0 日 目 から 0 連勝 で 勝ち越す 、 「 立ち合う で 負ける ない よう に 、 思い切り 自分 の 相撲 を 取る う と 思う て いる た 。</p>
+          <p class="n">[easy] 0 月 に 雨 で 大きな 被害 が ある た 芦北町 で も 、 中学生 の とき 一緒 に 相撲 を する た 友達 が 応援 する</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 123.67249019050014</p>
+          <p class="e">[news] 勝ち越す たい た ので よい た 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 215.62173895378544</p>
+          <p class="e">[news] ▽ 若 隆景 は 勝つ て 、 自己最高 位 の 前頭 0 枚 目 で 迎える た 今場所 を 0 勝 で 終える 、 「 0 番 勝てる た の は 自信 に なる た 。</p>
+          <p class="n">[easy] 相撲 の あと 正代 は 「 熊本 から の</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 105.12529519143713</p>
+          <p class="e">[news] 下 から の 攻め が よい た の だ は ない か 。</p>
+          <p class="n">[easy] たくさん の</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 一 から 体 を つくる て 来場所 に 臨む たい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 千秋楽 に 勝ち越す た 輝 は 「 勝ち越し の プレッシャー は あまり 意識 する て いる ない た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 最後 まで しっかり きちっと 勝ち きる 相撲 を 、 もっと やる て いく たい 」 と 次 の 場所 を 見据える て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 勝つ て 0 場所 連続 で 0 勝 を 挙げる た 高安 は 「 落とす た 星 が もったいない が 、 最後 まで いい motivation で できる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 稽古 を 積む で 一 回り 成長 する て 次 を 迎える たい 」 と 意気込む で いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 琴恵 光 は 幕内 に 復帰 する て から 0 場所 連続 の 勝ち越し を 決める 、 「 もう少し 早い 自分 の 相撲 が 取れる て いる た きょう より 前 に 勝ち越せる て いる た が 、 自分 の 相撲 が 取れる た ので 自信 に なる と 思う 」 と 振り返る ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 勝つ て 0 勝 0 敗 で 終える た 隆 の 勝 は 、 0 場所 連続 の 勝ち越し で 「 こんな 勝てる と は 思う て いる ない た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 自信 に も なる し 、 来場所 も この 調子 で 頑張る たい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 新 関脇 の 大栄翔 は 、 千秋楽 で 勝つ た ものの 0 勝 0 敗 に 終わる 、 「 実力 不足 だ な と 思う 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 突き 押し で もっと 攻める たい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 霧 馬山 は 、 休場 明け の 0 日 目 から 0 連勝 する 0 勝 0 敗 、 0 日 の 休み で 終える 、 「 0 連勝 する て よい た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 自分 の 相撲 を 取れる た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 左肩 の 状態 は 、 朝 は よい た が 終わる た とき は ちょっと 痛い た 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 新 入幕 の 翔 猿 は 、 正代 に 敗れる た ものの 最後 まで 優勝 争い を 演じる て 0 勝 0 敗 で 敢闘 賞 を 受賞 する 、 「 目標 だ た 三賞 、 二 桁 勝利 が できる て うれしい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 楽しい た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 土俵際 まで 攻める れる が 、 そこ から が 弱い 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] どんどん 攻める られる よう に する て いく たい 」 と 力強い 語る ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 貴景勝 は 、 朝乃 山 と の 大関 対決 を 制す 、 0 勝 0 敗 、 「 悔しい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 優勝 する たい た 、 もっと いい 成績 を 残す べし だ と 思う 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 大関 だ ある 以上 優勝 しか ない ので 、 そこ は 残念 だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 来場所 に 向ける やる べし こと は 変わる ない ので 、 自分 と 向き合う て 頑張る たい 」 と 悔しさ を にじむ せる て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] ▽ 一方 、 朝乃 山 は 0 勝 0 敗 で 初日 から の 0 連敗 が 響く 結果 と なる 、 「 序盤 の 0 連敗 の 相撲 は だめ だ な と 思う 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 195.5535121557076</p>
+          <p class="e">[news] 優勝争い に は 残る ない と いける ない し 、 自分 の 相撲 を 取る ない と 結果 も あと から つく て くる ない 。</p>
+          <p class="n">[easy] 応援 で</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 149.80931076278222</p>
+          <p class="e">[news] 来場所 は しっかり 自分 の 相撲 を 取る きれる よう 稽古 する て 頑張る たい 」 と 淡々 と 話す て いる ます た 。</p>
+          <p class="n">[easy] 力 が 出る ます た 」 と 話す ます た</p>
+        </div>
+        
+      </body>
+</html>

@@ -39,6 +39,7 @@ def graph(x, y, word_list=False, rev=False, tokenizer="mecab"):
 def path(x, y, word_list=False, rev=False, tokenizer="mecab"):
   vec_x, word_x = vec.to_vector(x, tokenizer)
   vec_y, word_y = vec.to_vector(y, tokenizer)
+  #print(vec_x)
 
   #print("input1_len:",len(vec_x))
   #print("input2_len:",len(vec_y))
@@ -63,8 +64,8 @@ def path_vec(x, y):
   
 
 if __name__=="__main__":
-  file_easy = "./data/easy/001.txt"
-  file_news = "./data/news/001.txt"
+  easy = "気象庁と環境省は、東京都と千葉県、茨城県では７日に熱中症になる危険がとても高いと言って、「高温注意情報」を出しました。"
+  news = "東京都と千葉県、茨城県では7日、熱中症の危険性が極めて高くなると予想されています。"
 
   path(easy, news, word_list=False, tokenizer="mecab")
   #graph(easy, news, word_list=False, tokenizer="mecab")

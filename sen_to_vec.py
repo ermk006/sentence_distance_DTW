@@ -27,7 +27,7 @@ def to_vector(sentence, tokenizer="mecab"):
       sentence_vec.append(list(df.loc[w]))
       sentence_word.append(w)
     except:
-      print("NO WORD IN LIST!! :", w)
+#      print("NO WORD IN LIST!! :", w)
       sentence_vec.append([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 #      sentence_vec.append([0, 0, 0])
       sentence_word.append(w)

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>DTW 545</title>
+      <link rel="stylesheet" href="./style.css">
+      <meta name="description" content="DTWで平易文に対応する単語を通常文から見つけて可視化する">
+
+    </head>
+    <body>
+        <h1>Article No. 545</h1>
+        <h2>DTW distance = 11437.706653716008</h2>
+        
+        <div>
+          <p class="d">[DTW distance] 183.2490291988084</p>
+          <p class="e">[news] 0 人 が 死亡 する た jr 福知山 線 の 脱線事故 から 0 日 で 0 年 と なる ます た 。</p>
+          <p class="n">[easy] 0 年 0 月 0 日 、 兵庫県尼崎市 で jr 福知山 線 の 電車 が 脱線 する て マンション に ぶつかる ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 229.80940585952155</p>
+          <p class="e">[news] 新型コロナウイルス の 影響 で 、 追悼 慰霊 式 は 0 年 連続 で 中止 する れる 、 遺族 たち は それぞれ の 場所 で 祈り を ささげる ます た 。</p>
+          <p class="n">[easy] 0 人 が 亡くなる た この 事故 から 0 年 に なる ます た 。 いつも は 亡くなる た 人 の ため に 祈る 式 を 行う ます</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 399.5406466166821</p>
+          <p class="e">[news] 平成 0 年 0 月 0 日 、 兵庫県尼崎市 で jr 福知山 線 、 通称 、 宝塚線 の 快速 電車 が 、 カーブ を 曲がる 切れる ぬ に 脱線 する て 線路 脇 の マンション に 衝突 する 、 乗客 ら 0 人 が 死亡 、 0 人 が けが を する ます た 。</p>
+          <p class="n">[easy] しかし 去年 と 今年 は 、 新しい コロナウイルス が 広がる て 兵庫県 に 緊急事態宣言 が 出る た ため 、 式 は 中止 に なる ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 288.59964100145714</p>
+          <p class="e">[news] 例年 、 jr西日本 が 主催 する て 行う れる て くる た 追悼 慰霊 式 は 、 新型コロナウイルス の 感染 が 拡大 する 、 兵庫県 に 緊急事態宣言 が 出す れる 中 0 年 連続 で 中止 する れる ます た 。</p>
+          <p class="n">[easy] 事故 が ある た 場所 に は 、 亡くなる た 人 の ため に 花 を 置く 台 が 作る れる ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 192.19201218281262</p>
+          <p class="e">[news] ただ 、 現場 に ある 追悼施設 に は 献花台 が 設ける られる 、 事故 が 起きる た 午前0時 0分 に 訪れる た 遺族 たち が 犠牲者 に 黙とう を ささげる ます た 。</p>
+          <p class="n">[easy] 事故 が ある た 午前0時 0分 に 、 亡くなる た 人 の 家族 たち が</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 202.08609674391815</p>
+          <p class="e">[news] 献花台 に は 0 日 、 遺族 と けが を する た 人 や 家族 、 0 組 が 慰霊 に 訪れる た という こと です 。</p>
+          <p class="n">[easy] 静か に 祈る ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 262.3426673472573</p>
+          <p class="e">[news] jr西日本 の 長谷川一明 社長 は 0 日 午前 、 献花 に 訪れる 「 取り返し の つく ない 重大 だ 事故 を 起こす て しまう た こと を 改めて 、 心より 深い おわび 申し上げる ます 。</p>
+          <p class="n">[easy] 家族 の 中 に は</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 197.95534970704784</p>
+          <p class="e">[news] 風化 する せる こと ない 安全 の 取り組み の 原点 と する て いく ます 」 と 述べる 、 改めて 陳謝 する ます た 。</p>
+          <p class="n">[easy] 、 自分 の 家 で 祈る た 人 も たくさん いる ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 新型コロナ の 影響 で 、 事故 を 伝える 機会 は 縮小 や 中止 を 余儀ない する れる た ほか 、 事故後 に jr西日本 に 入社 する た 社員 は 全体 の 半数 を 超える て いる て 、 記憶 や 教訓 を どう 継承 する て いく か は 、 大きな 課題 と なる て いる ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 現場 で は 、 脱線事故 が 発生 する た 午前0時 0分 と ほぼ 同じ 時刻 に 快速 電車 が 、 速度 を 落とす ながら 現場 を 通過 する ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 線路 沿い の 道路 で は 、 近所 の 人 など が 立ち止まる て 、 黙とう を ささげる て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 一方 、 おととし まで は 、 電車 が 現場 を 通過 する 際 に 、 警笛 を 鳴らす 、 亡くなる た 人達 へ の 哀悼 の 意 を 表す て くる ます た が 、 去年 に 続く 警笛 を 鳴らす ます ん です た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] これ について jr西日本 は 、 「 厳粛 に 追悼 する 環境 を 作る ため 」 と する て いる ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 通過 する た 電車 の 車内 で は 、 事故現場 に さしかかる 前 に 、 「 本日 で 福知山 線 列車事故 から 0 年 を 迎える ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] お 亡くなる に なる れる た お客様 の 御冥福 を お祈り する とともに 、 ご 遺族 、 けが を する れる た 方 と ご 家族 に 深い おわび 申し上げる ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] この 事故 を 心 に 刻む 安全運行 に 努める 、 安心 する て ご 利用 する て いただける よう 全力 を あげる て 取り組む で まいる ます 」 と の アナウンス が 流す れる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] そして 、 電車 が 現場 付近 に 近づく と 速度 が 落とす れる た 車内 で は 、 乗客 たち が 静か に 手 を 合わせる て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 当時 0歳 だ た 、 次男 の 昌毅 さん を 亡くす た 上田 弘志 さん ( 0 ) は 、 現場 で 献花 する て 祈り を ささげる た あと 「 jr西日本 の 社長 の 慰霊 の ことば は 今 まで と 同じ だ 、 きれい だ こと を 言う が 、 それ を いかに 実行 する か という こと が 欠ける て いる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] きれいな ことば を 並べる の だ は ない 、 しっかり と 行動 を 起こす て ほしい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 昌毅 さん の 弟 の 篤史 さん ( 0 ) は 「 もう 0 年 たつ が 、 『 兄ちゃん が 生きる てる た な 』 という 気持ち は 変わる ない 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 『 がんばる て 生きる てる よ 、 これから も そば で 見守る て ね 』 と 報告 する た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] コロナ の 中 でも 現場 に 来る れる て よい た と 思う 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 事故 が 起きる た 現場周辺 で は 、 静か に 手 を 合わせる て 祈り を ささげる 人達 の 姿 が 見る られる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 近所 に 住む 0歳 の 男性 は 、 妻 や 子ども 0 人 と 献花 に 訪れる 、 「 事故 当時 から 近く に 住む で いる て 、 とても ショック を 受ける た こと を 覚える て いる ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 私 は 事故 の 当事者 で は ない ので これ まで は 来る て も いい の か な と 思う て いる ます た が 、 子ども が 中学校 で 事故 の こと を 学ぶ で 、 自分 も 遺族 の 方 の 手紙 を 読む 機会 が ある 、 きょう 献花 に 来る きっかけ と なる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 亡くなる れる た 方 の 分 も 私たち が 精いっぱい 毎日 、 生きる ない ば いける ない と 思う ながら 、 祈り を ささげる ます た 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 事故 で 、 当時 0歳 だ た 長男 の 英也 さん を 亡くす た 、 兵庫県川西市 の 植木 安 さん ( 0 ) と 登喜子 さん ( 0 ) 夫妻 は 、 新型コロナ の 感染 防止 の ため 、 自宅 で 祈り を ささげる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 安 さん は 「 息子 を 思う 気持ち は 0 年 変わる て いる ます ん 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 0 年 0 年 、 老いる こと に は あらがう がたい 、 私 も いつ 亡くなる か 分かる ます ん が 事故 の こと を 語り継ぐ で いく て ほしい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また 、 登喜子 さん は 、 「 英也 の こと は 常に 忘れる て いる ます ん 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] たまに 『 いう て くる よ 』 とか 、 ことば を かける たり も する て いる ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] jr西日本 の 社員 は 事故 を 胸 に おさめる て 、 研修 に 生かす て ほしい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 脱線事故 で 当時 0歳 だ た 長女 を 亡くす た 藤崎 光子 さん ( 0 ) は 、 自宅 近く で 取材 に 応じる 「 『 年月 が 悲しみ を 癒 やす 』 という の は うそ だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 年月 が たつ ば たつ ほど つらさ は 増す 、 悲しい 思い の 中 で 生きる て いく の が 事故 の あと の 人生 だ 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 今 でも 、 娘。 の 『 なぜ 私 は 殺す れる た の 』 という 声 が 聞こえる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 食事 を する て いる て も 、 『 なぜ 私 は そこ に いない の 』 という 声 が 聞こえる 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] jr西日本 に は 、 安全 だ 会社 に なる て ほしい 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 私 の よう だ 遺族 を 生む ない で ほしい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 「 負傷者 と 家族 等 の 会 」 の メンバー で 、 次女 が 大 けが を する た 兵庫県川西市 の 三井 ハルコ さん ( 0 ) は 、 「 遺族 や 負傷者 、 家族 にとって 『 事故 から 何 年 』 という 区切り は 有馬線 が 、 時間 が 過ぎる につれて 事故 の 風化 は 加速 する て しまう と 思う ます 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] コロナ の 感染拡大 は 永遠 に 続く こと は ない ので 、 事故 を 風化 する せる ない ため に これから も こつこつ と できる こと を する て いく たい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] また jr西日本 に対して 、 「 新型コロナ の 感染 で 経営 的 に 大変 だ 局面 を 迎える 中 、 再発防止 の ため に どの よう に 安全性 を 保つ か など 事故 の 被害者 と 一緒 に なる て 考える て いく て ほしい 」 と 要望 する ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 兵庫県伊丹市 で は 脱線事故 で けが を する た 人 が 、 駅前 の 広場 で 追悼 の メッセージ を 書く た 風船 を 飛ばす 、 犠牲者 を 追悼 する ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 事故 で 大 けが を する た 伊丹市 の 増田 和代 さん ( 0 ) は 去年 に 続く て 新型コロナウイルス の 影響 で 慰霊 式 など の 追悼 行事 が 中止 する れる なか 、 事故 の 記憶 を 風化 する せる たい ない と ことし も 独自 だ 行事 を 行う こと に する ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 0</p>
+          <p class="e">[news] 増田 さん の 友人 など 合わせる て 0 人 が jr 伊丹駅 前 に 集まる 、 事故 が 起きる た 午前0時 0分 、 手 を 合わせる て 黙とう する ます た 。</p>
+          <p class="n">[easy] </p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 340.70521321455413</p>
+          <p class="e">[news] そして 駅前 広場 に ある 鐘 が 鳴る 中 、 「 コロナ禍 で 0 年 に なる ます た が 、 天国 の 皆さん に 届く ます よう に 」 という 掛け声 とともに 、 メッセージ が 書く れる た 風船 を 一斉に 空 に 放つ ます た 。</p>
+          <p class="n">[easy] 事故 の 場所 に 来る</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 192.18999748658203</p>
+          <p class="e">[news] 風船 に は それぞれ 、 「 事故 の こと は 忘れる ない 」 や 「 安全 だ 社会 へ 」 など と 書き込む れる て いる ます 。</p>
+          <p class="n">[easy] jr西日本 の 社長 は 「 大きな 事故 を 起こす て しまう ます た</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 240.94881614633397</p>
+          <p class="e">[news] 増田 さん は 「 私たち の よう だ 事故 の 被害者 で 生き残る て いる 人達 は 、 風化 する せる て は なる ない という 使命 を 持つ て いる 。</p>
+          <p class="n">[easy] 深い おわび する ます 。 事故 の こと を</p>
+        </div>
+        
+        <div>
+          <p class="d">[DTW distance] 153.9411397192313</p>
+          <p class="e">[news] jr を 利用 する て いる 方々 に 少し でも 事故 の こと を 思い出す て もらう たい 」 と 話す て いる ます た 。</p>
+          <p class="n">[easy] 忘れる ない で 安全 だ 運転 を する て いく ます 」 と 話す ます た</p>
+        </div>
+        
+      </body>
+</html>

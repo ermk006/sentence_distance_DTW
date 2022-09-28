@@ -10,9 +10,11 @@ import pandas as pd
 import preproc as pre
 import plot_dtw as dtw
 import re
+import numpy as np
 
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
-tmpl = env.get_template('./html/tmp/temp01.html')
+#tmpl = env.get_template('./html/tmp/temp01.html')
+tmpl = env.get_template('./html/tmp/temp01_news_to_easy.html')
 
 
 # easyのファイルパス全てを取得
@@ -47,7 +49,6 @@ def view(number, tokenizer="mecab"):
 
   with open(f_easy) as fe:
     lines_easy = fe.readlines()
-    #print(lines_easy)
 
   e_sentence_num = []
   e_vec_list = []
@@ -73,24 +74,64 @@ def view(number, tokenizer="mecab"):
     for word in word_n:
       n_sentence_num.append([i, word])
 
+
+  # easy/newsをsource/targetへ変更
+  source_sentence_num = n_sentence_num
+  target_sentence_num = e_sentence_num
+  source_word_list = n_word_list
+  target_word_list = e_word_list
+  source_vec_list = n_vec_list
+  target_vec_list = e_vec_list
+  directory_name = "news_to_easy/"
+
+  pair(number, source_sentence_num, target_sentence_num, source_word_list, target_word_list, source_vec_list, target_vec_list, directory_name)
+
+# 表示
+def pair(number, source_sentence_num, target_sentence_num, source_word_list, target_word_list, source_vec_list, target_vec_list, pname):
   # DTWで単語間の距離を測る
-  dist, path = dtw.path_vec(e_vec_list, n_vec_list)
-  e_l, n_l = path_to_list(path)
-  
+  dist, path = dtw.path_vec(source_vec_list, target_vec_list)
+  source_l, target_l = path_to_list(path)
 
-  # 表示
-  easy_list = []
-  news_list = []
-  for k in range(0, len(e_sentence_num)):
-    n = [i for i, li in enumerate(e_sentence_num) if li[0] == k]
-    if(len(n) > 1):
-      easy_list.append(" ".join(e_word_list[min(n):max(n)+1]))
-      news_list.append(" ".join(n_word_list[n_l[e_l.index(min(n))]:n_l[last_index(e_l, max(n))]]))
+  source_list = []
+  source_vec = []
+  target_list = []
+  target_vec = []
+  distance_list = []
 
-  html = tmpl.render({"num_article":number, "data":zip(easy_list, news_list)})
+  # 文のまとまりを抽出し、単語列のリストを作る。
+  for k in range(0, len(source_sentence_num)):
+    n = [i for i, li in enumerate(source_sentence_num) if li[0] == k]
+    if not n:
+#      print("105:if not n")
+      break
+    else:
+      __s_start = min(n)
+      __s_end = max(n)+1
+      __t_start = target_l[source_l.index(min(n))]
+      __t_end = target_l[last_index(source_l, max(n))]
+      #print("number:", number, "__t_end:", __t_end, "len(target_l[]:", target_l[last_index(source_l, max(n))])
 
-  with open('html/out/30/' + number +'.html',mode='w',encoding="utf-8") as f:
+      source_list.append(" ".join(source_word_list[__s_start:__s_end]))
+      target_list.append(" ".join(target_word_list[__t_start:__t_end]))
+
+      source_vec.append(source_vec_list[__s_start:__s_end])
+      target_vec.append(target_vec_list[__t_start:__t_end])
+
+      # 文単位でDTW
+      if not target_vec[k]:
+#        print("target_vec is empty. k=", k, "len(target_vec)=", len(target_vec))
+        distance_list.append(0)
+      else:
+        sentence_dist, sentence_path = dtw.path_vec(source_vec[k], target_vec[k])
+        distance_list.append(sentence_dist / (len(source_list + len(target_list)))
+
+      continue
+
+  html = tmpl.render({"num_article":number, "data":zip(source_list, target_list, distance_list), "dtw_dist":dist})
+
+  with open('html/out/' + pname + number +'.html',mode='w',encoding="utf-8") as f:
     f.write(str(html))
+
 
 if __name__=="__main__":
   for file in get_e_files():
