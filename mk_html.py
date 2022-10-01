@@ -5,12 +5,14 @@ from http.client import PRECONDITION_REQUIRED
 from locale import locale_encoding_alias
 from jinja2 import Environment, FileSystemLoader
 import sen_to_vec as vec
+import wmd
 import glob
 import pandas as pd
 import preproc as pre
 import plot_dtw as dtw
 import re
 import numpy as np
+import csv
 
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 #tmpl = env.get_template('./html/tmp/temp01.html')
@@ -97,6 +99,7 @@ def pair(number, source_sentence_num, target_sentence_num, source_word_list, tar
   target_list = []
   target_vec = []
   distance_list = []
+  wmd_list = []
 
   # 文のまとまりを抽出し、単語列のリストを作る。
   for k in range(0, len(source_sentence_num)):
@@ -121,16 +124,28 @@ def pair(number, source_sentence_num, target_sentence_num, source_word_list, tar
       if not target_vec[k]:
 #        print("target_vec is empty. k=", k, "len(target_vec)=", len(target_vec))
         distance_list.append(0)
+        wmd_list.append(0)
       else:
         sentence_dist, sentence_path = dtw.path_vec(source_vec[k], target_vec[k])
-        distance_list.append(sentence_dist / (len(source_list + len(target_list)))
+        word_sum = len(source_vec[k]) * len(target_vec[k])
+        sentence_dist_norm = round(sentence_dist/word_sum, 4)
+        distance_list.append(sentence_dist_norm)
+        wmd_list.append(wmd.wmd_distance(source_word_list[__s_start:__s_end], target_word_list[__t_start:__t_end]))
 
       continue
 
-  html = tmpl.render({"num_article":number, "data":zip(source_list, target_list, distance_list), "dtw_dist":dist})
+  with open('html/out/dtw_wmd.csv',mode='a',encoding="utf-8") as cf:
+    writer = csv.writer(cf, delimiter=",")
+    csv_data = list(zip(distance_list, wmd_list))
+    writer.writerows(csv_data)
+
+"""
+  html = tmpl.render({"num_article":number, "data":zip(source_list, target_list, distance_list, wmd_list), "dtw_dist":dist})
 
   with open('html/out/' + pname + number +'.html',mode='w',encoding="utf-8") as f:
     f.write(str(html))
+"""
+
 
 
 if __name__=="__main__":

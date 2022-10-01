@@ -10,9 +10,9 @@
     <body>
         <h1>Article No. {{num_article}}</h1>
         <h2>DTW distance = {{dtw_dist}}</h2>
-        {% for news, easy, dist in data %}
+        {% for news, easy, dist, wmd in data %}
         <div>
-          <p class="d">[DTW distance] {{dist}}</p>
+          <p class="d">[DTW distance] {{dist}} || [Word Mover's Distance] {{wmd}}</p>
           <p class="e">[news] {{news}}</p>
           <p class="n">[easy] {{easy}}</p>
         </div>

@@ -131,3 +131,8 @@ dmypy.json
 # mac
 .DS_Store
 
+# old data
+html/out/3/
+html/out/10/
+html/out/30/
+
