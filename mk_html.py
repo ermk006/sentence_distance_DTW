@@ -13,11 +13,14 @@ import plot_dtw as dtw
 import re
 import numpy as np
 import csv
+import time
 
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 #tmpl = env.get_template('./html/tmp/temp01.html')
 tmpl = env.get_template('./html/tmp/temp01_news_to_easy.html')
 
+TS_DTW = 0.26
+TS_WMD = 0.63
 
 # easyのファイルパス全てを取得
 def get_e_files():
@@ -86,7 +89,42 @@ def view(number, tokenizer="mecab"):
   target_vec_list = e_vec_list
   directory_name = "news_to_easy/"
 
-  pair(number, source_sentence_num, target_sentence_num, source_word_list, target_word_list, source_vec_list, target_vec_list, directory_name)
+  #pair(number, source_sentence_num, target_sentence_num, source_word_list, target_word_list, source_vec_list, target_vec_list, directory_name)
+  make_pseudo(source_sentence_num, source_word_list, target_word_list, source_vec_list, target_vec_list)
+
+
+def make_pseudo(source_sentence_num, source_word_list, target_word_list, source_vec_list, target_vec_list):
+  # DTWで単語間の距離を測る
+  dist, path = dtw.path_vec(source_vec_list, target_vec_list)
+  source_l, target_l = path_to_list(path)
+
+  target_vec = []
+  m = [source_sentence_num[i][0] for i , li in enumerate(source_sentence_num)]
+  cnt_sentence = max(m)+1
+  # 文のまとまりを抽出し、単語列のリストを作る。
+  for k in range(0, cnt_sentence):
+    n = [i for i, li in enumerate(source_sentence_num) if li[0] == k]
+    
+    if not n:
+      break
+    else:
+      __s_start = min(n)
+      __s_end = max(n)+1
+      __t_start = target_l[source_l.index(min(n))]
+      __t_end = target_l[last_index(source_l, max(n))]
+
+      # 文単位でDTW
+      if target_vec_list[__t_start:__t_end]:
+        sentence_dist, sentence_path = dtw.path_vec(source_vec_list[__s_start:__s_end], target_vec_list[__t_start:__t_end])
+        word_sum = len(source_vec_list[__s_start:__s_end]) * len(target_vec_list[__t_start:__t_end])
+        wmd_dist = wmd.wmd_distance(source_word_list[__s_start:__s_end], target_word_list[__t_start:__t_end])
+        data_line = [sentence_dist/word_sum, wmd_dist, "".join(source_word_list[__s_start:__s_end]), "".join(target_word_list[__t_start:__t_end])]
+        with open('out/sentence_dist_dataset.csv',mode='a',encoding="utf-8") as cf:
+          writer = csv.writer(cf, delimiter=",")
+          writer.writerow(data_line)
+
+      continue
+
 
 # 表示
 def pair(number, source_sentence_num, target_sentence_num, source_word_list, target_word_list, source_vec_list, target_vec_list, pname):
@@ -149,6 +187,10 @@ def pair(number, source_sentence_num, target_sentence_num, source_word_list, tar
 
 
 if __name__=="__main__":
+  start = time.perf_counter()
+
   for file in get_e_files():
     number = re.search('[0-9]+', file).group()
     view(number)
+
+  print("TIME(s):", time.perf_counter() - start)
