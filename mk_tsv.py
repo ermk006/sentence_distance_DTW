@@ -2,18 +2,18 @@ from textwrap import indent
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-in_file = "out/raw_sentence_dist_dataset.csv"
-train_file = "out/train.tsv"
-dev_file = "out/dev.tsv"
-test_file = "out/test.tsv"
+in_file = "out2/raw_sentence_dist_dataset.csv"
+train_file = "out2/train.tsv"
+dev_file = "out2/dev.tsv"
+test_file = "out2/test.tsv"
 
 # 類似度上位75%
-border_dtw = 0.90
-border_wmd = 0.90
+#border_dtw = 0.90
+#border_wmd = 0.90
 
 # 類似度上位25%
-#border_dtw = 0.26
-#border_wmd = 0.63
+border_dtw = 0.26
+border_wmd = 0.63
 
 
 df = pd.read_csv(in_file, header=None)
