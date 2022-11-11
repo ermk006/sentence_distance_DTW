@@ -24,10 +24,10 @@ def pre(sentence):
 def mecab_tokenizer(text):
   # テキストを分かち書きする関数を準備する
   parsed_lines = tagger.parse(text).split("\n")[:-2]
-  surfaces = [l.split('\t')[0] for l in parsed_lines]
-  features = [l.split('\t')[1] for l in parsed_lines]
-  # 原型を取得
-  bases = [f.split(',')[6] for f in features]
+  surfaces = [l.split('\t')[0] for l in parsed_lines] # もとの形式
+  features = [l.split('\t')[1] for l in parsed_lines] 
+  # 原形を取得
+  bases = [f.split(',')[6] for f in features]         # 原形
   # 配列で結果を返す
   token_list = [b if b != '*' else s for s, b in zip(surfaces, bases)]
   # アルファベットを小文字に統一
@@ -45,3 +45,9 @@ def ginza_tokenizer(text):
   token_list = [t.lower() for t in token_list]
 
   return token_list
+
+def mecab_wakati(text):
+  # テキストを分かち書きする関数を準備する
+  parsed_lines = tagger.parse(text).split("\n")[:-2]
+  surfaces = [l.split('\t')[0] for l in parsed_lines] # もとの形式
+  return surfaces

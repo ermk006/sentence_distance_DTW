@@ -34,3 +34,9 @@ def to_vector(sentence, tokenizer="mecab"):
       pass
 
   return(sentence_vec, sentence_word)
+
+
+if __name__=="__main__":
+  print(("関東甲信ではことし7月から、高温注意情報の発表基準が予想最高気温から暑さ指数に変更されていますが、今回が初めての発表になります。"))
+
+

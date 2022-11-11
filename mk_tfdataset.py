@@ -2,16 +2,16 @@ from textwrap import indent
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-in_file = "out/sentence_dist_dataset.csv"
-train_news = "out/train_news.csv"
-train_easy = "out/train_easy.csv"
-val_news = "out/val_news.csv"
-val_easy = "out/val_easy.csv"
-test_news = "out/test_news.csv"
-test_easy = "out/test_easy.csv"
+in_file = "out/raw_sentence_dist_dataset.csv"
+train_news = "out/train_news.txt"
+train_easy = "out/train_easy.txt"
+val_news = "out/val_news.txt"
+val_easy = "out/val_easy.txt"
+test_news = "out/test_news.txt"
+test_easy = "out/test_easy.txt"
 
-border_dtw = 0.26
-border_wmd = 0.63
+border_dtw = 0.90
+border_wmd = 0.90
 
 
 df = pd.read_csv(in_file, header=None)
