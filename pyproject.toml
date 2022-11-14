@@ -18,6 +18,7 @@ ginza = "^5.1.1"
 ja-ginza = "^5.1.0"
 Jinja2 = "^3.1.2"
 pyemd = "^0.5.1"
+nltk = "^3.7"
 
 [tool.poetry.dev-dependencies]
 
