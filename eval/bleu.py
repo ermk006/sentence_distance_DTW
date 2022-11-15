@@ -1,15 +1,23 @@
 import nltk
 from nltk import word_tokenize
 from nltk import bleu_score
+import csv
 import MeCab
+tagger = MeCab.Tagger("-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd")
 
 nltk.download('punkt')
 
-def get_bleu(text1, text2):
+def calc_bleu(text1, text2):
   hyp = word_tokenize(text1)
   ref = word_tokenize(text2)
 
-  return bleu_score.sentence_bleu([ref], hyp)
+  return round(bleu_score.sentence_bleu([ref], hyp), 4)
+
+def calc_bleu_3gram(text1, text2):
+  hyp = word_tokenize(text1)
+  ref = word_tokenize(text2)
+
+  return round(bleu_score.sentence_bleu([ref], hyp, (1./3., 1./3., 1./3.)), 4)
 
 
 def mecab_tokenizer(text):
@@ -26,6 +34,19 @@ def mecab_tokenizer(text):
   return token_list
 
 
-
 if __name__=="__main__":
-  print(get_bleu("子ども が ベランダ から 落ちる 事故 が 続く て いる ます 。","子ども の 転落事故 は 、 ことし に 入る て から も 相次ぐ で いる"))
+  with open('eval/T5/T5_75.csv', mode='r') as f:
+    reader = csv.reader(f)
+  
+    eval = []
+    for row in reader:
+      x = calc_bleu_3gram(' '.join(mecab_tokenizer(row[0])), ' '.join(mecab_tokenizer(row[2])))
+      eval.append(x)
+      print(row[0])
+      print(row[2])
+      print(x)
+    
+    print("max = ", max(eval))
+    print("average = ", sum(eval) / len(eval))
+
+
