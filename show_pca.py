@@ -37,7 +37,7 @@ def show_pca(model_file):
   plt.xlabel("Number of principal components")
   plt.ylabel("Cumulative contribution rate")
   plt.grid()
-  plt.savefig("out/pca_ratio.png")
+  plt.savefig("out/pca_ratio.pdf")
 
 
 if __name__=="__main__":

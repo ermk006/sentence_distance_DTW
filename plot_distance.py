@@ -24,7 +24,7 @@ def main():
   plt.ylabel("WMD")
 
   plt.scatter(data_x_log, data_y)
-  plt.show()
+  plt.savefig("out/dtw_wmd.pdf")
 
   cor = csv_df.corr()
   print("相関係数" , cor)
