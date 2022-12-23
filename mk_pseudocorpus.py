@@ -16,6 +16,7 @@ import csv
 import time
 
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
+test_files = ["022.txt", "186.txt", "169.txt"]
 
 
 # 文->単語ごとのベクトル列
@@ -149,8 +150,10 @@ def view(number, tokenizer="mecab"):
 
 if __name__=="__main__":
   start = time.perf_counter()
+#  mode = get_e_files()
+  mode = test_files
 
-  for file in get_e_files():
+  for file in mode:
     number = re.search('[0-9]+', file).group()
     view(number)
 
