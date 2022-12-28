@@ -14,32 +14,15 @@ import re
 import numpy as np
 import csv
 import time
+import os
 
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 test_files = ["022.txt", "186.txt", "169.txt"]
 
+output_path = "out_biDirectional/raw_sentence_dist_dataset.csv"
 
-# 文->単語ごとのベクトル列
-def to_vector(sentence):
-  line = pre.pre(sentence)
-
-  word_list = pre.mecab_tokenizer(line)
-  df = df_m
-  
-  sentence_vec = []
-  sentence_word = []
-  for w in word_list:
-    try:
-      sentence_vec.append(list(df.loc[w]))
-      sentence_word.append(w)
-    except:
-#      print("NO WORD IN LIST!! :", w)
-      sentence_vec.append([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-#      sentence_vec.append([0, 0, 0])
-      sentence_word.append(w)
-      pass
-
-  return(sentence_vec, sentence_word)
+if(os.path.isfile(output_path)):
+    os.remove(output_path)
 
 # easyのファイルパス全てを取得
 def get_e_files():
@@ -67,10 +50,16 @@ def last_index(li, x):
   num = [i for i, _x in enumerate(li) if _x == x]
   return num[-1]
 
-def view(number, tokenizer="mecab"):
+def search_range(li, x):
+  min = li.index(x)
+  max = last_index(li, x)
+  return min, max
+
+def view(number, directions, tokenizer="mecab"):
   f_easy = "./data/easy/" + number + ".txt"
   f_news = "./data/news/" + number + ".txt"
 
+  # テキストから単語ベクトル、文番号、原形単語、生単語をリスト化
   with open(f_easy) as fe:
     lines_easy = fe.readlines()
 
@@ -80,7 +69,7 @@ def view(number, tokenizer="mecab"):
   e_raw_list = []
   for i, line in enumerate(lines_easy):
     vec_e, word_e = vec.to_vector(pre.pre(line), tokenizer)
-    e_raw_list.extend(pre.mecab_wakati(line))
+    e_raw_list.extend(pre.mecab_wakati_raw(pre.pre(line)))
     e_vec_list.extend(vec_e)
     e_word_list.extend(word_e)
     for word in word_e:
@@ -95,53 +84,73 @@ def view(number, tokenizer="mecab"):
   n_raw_list = []
   for i, line in enumerate(lines_news):
     vec_n, word_n = vec.to_vector(pre.pre(line), tokenizer)
-    n_raw_list.extend(pre.mecab_wakati(pre.pre(line)))
+    n_raw_list.extend(pre.mecab_wakati_raw(pre.pre(line)))  #全角数字は1文字ずつ分かち書きされてしまう
     n_vec_list.extend(vec_n)
     n_word_list.extend(word_n)
     for word in word_n:
       n_sentence_num.append([i, word])
 
+  # easy->newsの対応づけか？news->easyの対応づけか？
+  if(directions == "to_easy"):
+    # easy/newsをsource/targetへ変更
+    source_sentence_num = n_sentence_num
+    target_sentence_num = e_sentence_num
+    source_word_list = n_word_list
+    target_word_list = e_word_list
+    source_raw_list = n_raw_list
+    target_raw_list = e_raw_list
+    source_vec_list = n_vec_list
+    target_vec_list = e_vec_list
+  else: # to_news
+    # news/easyをsource/targetへ変更
+    source_sentence_num = e_sentence_num
+    target_sentence_num = n_sentence_num
+    source_word_list = e_word_list
+    target_word_list = n_word_list
+    source_raw_list = e_raw_list
+    target_raw_list = n_raw_list
+    source_vec_list = e_vec_list
+    target_vec_list = n_vec_list
 
-  # easy/newsをsource/targetへ変更
-  source_sentence_num = n_sentence_num
-  target_sentence_num = e_sentence_num
-  source_word_list = n_word_list
-  target_word_list = e_word_list
-  source_raw_list = n_raw_list
-  target_raw_list = e_raw_list
-  source_vec_list = n_vec_list
-  target_vec_list = e_vec_list
-  directory_name = "news_to_easy/"
 
   # DTWで単語間の距離を測る
   dist, path = dtw.path_vec(source_vec_list, target_vec_list)
   source_l, target_l = path_to_list(path)
 
+  source_sentence_list = [source_sentence_num[i][0] for i , li in enumerate(source_sentence_num)]
+  target_sentence_list = [target_sentence_num[i][0] for i , li in enumerate(target_sentence_num)]
+  s_cnt_sentence = max(source_sentence_list)+1
 
-  m = [source_sentence_num[i][0] for i , li in enumerate(source_sentence_num)]
-  cnt_sentence = max(m)+1
   # 文のまとまりを抽出し、単語列のリストを作る。
-  for k in range(0, cnt_sentence):
+  for k in range(0, s_cnt_sentence):
     n = [i for i, li in enumerate(source_sentence_num) if li[0] == k]
+
     
     if not n:
       break
     else:
       __s_start = min(n)
       __s_end = max(n)+1
-      __t_start = target_l[source_l.index(min(n))]
-      __t_end = target_l[last_index(source_l, max(n))]
+
+      split_mode = "full_sentence" #完成文にしないのであればsplit_mode = "normal"にでもする
+      if split_mode == "full_sentence":
+        s_t_pos = target_l[source_l.index(min(n))]
+        s_e_pos = target_l[last_index(source_l, max(n))]+1
+        __t_start, _ = search_range(target_sentence_list, target_sentence_num[s_t_pos][0])
+        _, __t_end = search_range(target_sentence_list, target_sentence_num[s_e_pos-1][0])
+      else:
+        __t_start = target_l[source_l.index(min(n))]
+        __t_end = target_l[last_index(source_l, max(n))]
 
       # 文単位でDTW
-      if target_vec_list[__t_start:__t_end]:
-        sentence_dist, sentence_path = dtw.path_vec(source_vec_list[__s_start:__s_end], target_vec_list[__t_start:__t_end])
-        word_sum = len(source_vec_list[__s_start:__s_end]) * len(target_vec_list[__t_start:__t_end])
-        wmd_dist = wmd.wmd_distance(source_word_list[__s_start:__s_end], target_word_list[__t_start:__t_end])
+      if target_vec_list[__t_start:__t_end+1]:
+        sentence_dist, sentence_path = dtw.path_vec(source_vec_list[__s_start:__s_end], target_vec_list[__t_start:__t_end+1])
+        word_sum = len(source_vec_list[__s_start:__s_end]) * len(target_vec_list[__t_start:__t_end+1])
+        wmd_dist = wmd.wmd_distance(source_word_list[__s_start:__s_end], target_word_list[__t_start:__t_end+1])
 
-#        data_line = [sentence_dist/word_sum, wmd_dist, "".join(source_word_list[__s_start:__s_end]), "".join(target_word_list[__t_start:__t_end])]
-        data_line = [sentence_dist/word_sum, wmd_dist, "".join(source_raw_list[__s_start:__s_end]), "".join(target_raw_list[__t_start:__t_end])]
+        data_line = [sentence_dist/word_sum, wmd_dist, "".join(source_raw_list[__s_start:__s_end]), "".join(target_raw_list[__t_start:__t_end+1])]
 
-        with open('out2/raw_sentence_dist_dataset.csv',mode='a',encoding="utf-8") as cf:
+        with open(output_path, mode='a',encoding="utf-8") as cf:
           writer = csv.writer(cf, delimiter=",")
           writer.writerow(data_line)
 
@@ -150,11 +159,11 @@ def view(number, tokenizer="mecab"):
 
 if __name__=="__main__":
   start = time.perf_counter()
-#  mode = get_e_files()
-  mode = test_files
+  mode = get_e_files()
+#  mode = test_files
 
   for file in mode:
     number = re.search('[0-9]+', file).group()
-    view(number)
+    view(number, "to_news")
 
   print("TIME(s):", time.perf_counter() - start)

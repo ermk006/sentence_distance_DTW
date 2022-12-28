@@ -46,8 +46,8 @@ def ginza_tokenizer(text):
 
   return token_list
 
-def mecab_wakati(text):
+def mecab_wakati_raw(text):
   # テキストを分かち書きする関数を準備する
   parsed_lines = tagger.parse(text).split("\n")[:-2]
-  surfaces = [l.split('\t')[0] for l in parsed_lines] # もとの形式
+  surfaces = [l.split('\t')[0] for l in parsed_lines] # 生データ
   return surfaces
