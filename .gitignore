@@ -135,4 +135,7 @@ dmypy.json
 html/out/3/
 html/out/10/
 html/out/30/
-
+out_25/
+out_75/
+log.txt
+log_file.txt

@@ -19,7 +19,8 @@ import os
 env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 test_files = ["022.txt", "186.txt", "169.txt"]
 
-output_path = "out_biDirectional/raw_sentence_dist_dataset.csv"
+output_path = "out_biDirectional/raw_sentence_dist_dataset_EtoN.csv"
+split_mode = "full_sentence" #完成文にするなら"full_sentence"にする
 
 if(os.path.isfile(output_path)):
     os.remove(output_path)
@@ -132,7 +133,6 @@ def view(number, directions, tokenizer="mecab"):
       __s_start = min(n)
       __s_end = max(n)+1
 
-      split_mode = "full_sentence" #完成文にしないのであればsplit_mode = "normal"にでもする
       if split_mode == "full_sentence":
         s_t_pos = target_l[source_l.index(min(n))]
         s_e_pos = target_l[last_index(source_l, max(n))]+1
@@ -161,9 +161,11 @@ if __name__=="__main__":
   start = time.perf_counter()
   mode = get_e_files()
 #  mode = test_files
+  print(mode)
 
   for file in mode:
     number = re.search('[0-9]+', file).group()
+    print("[fnum]",number)
     view(number, "to_news")
 
   print("TIME(s):", time.perf_counter() - start)
